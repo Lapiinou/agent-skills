@@ -1,0 +1,18 @@
+{
+  "name": "public-api-mcp-skills",
+  "version": "0.1.0",
+  "description": "White-label AI agent skills for commerce, membership, and community MCP workflows.",
+  "private": true,
+  "scripts": {
+    "build": "python scripts/build.py",
+    "validate": "python scripts/validate.py"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "cursor",
+    "gemini-cli",
+    "vscode"
+  ],
+  "license": "MIT"
+}

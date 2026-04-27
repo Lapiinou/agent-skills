@@ -1,0 +1,13 @@
+{
+  "name": "public-api-mcp-skills",
+  "displayName": "Public API MCP Skills",
+  "version": "0.1.0",
+  "description": "White-label AI agent skills for commerce, membership, and community MCP workflows.",
+  "skills": "skills",
+  "platforms": [
+    "claude-code",
+    "cursor",
+    "gemini-cli",
+    "vscode"
+  ]
+}

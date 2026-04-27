@@ -3,14 +3,20 @@
 White-label AI agent skills for commerce, membership, and community MCP workflows.
 
 This folder is designed to be self-contained so it can be published as its own
-GitHub repository. Users can point an AI IDE or agent runtime at the repository
-URL, or clone it and install the skill folders locally.
+GitHub repository. Users can install it through agent-tool plugin flows where
+supported, or clone it and install the skill folders locally.
 
 ## What's Included
 
 - `skills/` contains one portable skill package per directory.
 - `skills.json` is the catalog manifest for discovery and marketplace indexing.
 - Each skill includes a `SKILL.md` file and a `manifest.json` file.
+- `plugin.json`, `gemini-extension.json`, and `package.json` expose the repo as
+  a plugin/source package for compatible agent tools.
+- `.claude-plugin/` and `.cursor-plugin/` contain generated plugin packages.
+- `GEMINI.md`, `.gemini/GEMINI.md`, and `.github/instructions/` contain
+  generated instruction bundles for Gemini CLI and VS Code/Copilot.
+- `scripts/build.py` regenerates all plugin packaging from `skills/`.
 - `scripts/install.py` installs skills for Claude Code, Cursor, Gemini CLI,
   VS Code/Copilot, or a custom skill directory.
 - `scripts/validate.py` checks package structure and white-label constraints.
@@ -26,8 +32,17 @@ the target IDE, then install these skills as agent instructions.
 
 ## Install From GitHub
 
-When an IDE supports installing skills directly from a GitHub URL, use the URL of
-this repository or this folder after it has been split into a standalone repo.
+When an agent tool supports installing plugins or extensions directly from a
+GitHub URL, use the URL of this repository after it has been published.
+
+For Gemini CLI:
+
+```bash
+gemini extensions install https://github.com/<owner>/<repo>
+```
+
+For VS Code/Copilot, use the command palette action to install a chat plugin
+from source, then paste this repository URL.
 
 For local installation:
 
@@ -70,6 +85,26 @@ python scripts/install.py --target-dir /path/to/skills
 For backwards compatibility, `--target /path/to/skills` also installs raw skill
 folders into that directory. Each package is a directory containing a `SKILL.md`
 file.
+
+## Build Generated Plugin Files
+
+The skill folders are the source of truth. After adding, removing, or renaming a
+skill, regenerate the platform packaging:
+
+```bash
+python scripts/build.py
+```
+
+This updates:
+
+- `.claude-plugin/skills/`
+- `.cursor-plugin/skills/`
+- `GEMINI.md`
+- `.gemini/GEMINI.md`
+- `.github/instructions/public-api-mcp-skills.instructions.md`
+- `plugin.json`
+- `gemini-extension.json`
+- `package.json`
 
 ## Catalog Format
 
