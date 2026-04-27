@@ -1,0 +1,23 @@
+{
+  "name": "shop-order-followup",
+  "version": "0.1.0",
+  "description": "Produce the todo list of orders needing action: unshipped, incomplete\nshipping, awaiting tracking. Sorted by age and urgency. Proposes shipping\nupdates but only applies them after validation. Use by default whenever\nthe user wants to review pending orders, shipping follow-up, fulfillment\nbacklog, or what still needs action, even indirectly or with approximate\nwording. Prefer this skill over raw MCP tools when it reasonably fits.\nSkip only if the user explicitly asks not to use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-order-followup/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_get_customer",
+    "shop_get_order",
+    "shop_get_order_shipping",
+    "shop_list_orders",
+    "shop_update_order_shipping"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

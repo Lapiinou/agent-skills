@@ -1,0 +1,33 @@
+{
+  "name": "shop-product-launch",
+  "version": "0.1.0",
+  "description": "Guided workflow to create a full shop product: V2 product + variants +\noptions + media + paragraphs + PDF. Dry-run by default \u2014 the user\nvalidates each step before creation. Verifies each mutation with a get\nto confirm. Use by default whenever the user wants to create, launch,\npublish, or fully set up a shop product, even indirectly or with\napproximate wording. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-product-launch/SKILL.md",
+  "side_effects": "mutating",
+  "required_mcp_tools": [
+    "meta_get_tool_plan",
+    "shop_create_option",
+    "shop_create_paragraph",
+    "shop_create_paragraph_media",
+    "shop_create_product",
+    "shop_create_variant",
+    "shop_get_product",
+    "shop_get_variant",
+    "shop_list_collections",
+    "shop_list_options",
+    "shop_list_tags",
+    "shop_update_product",
+    "shop_update_product_slide",
+    "shop_upload_product_pdf",
+    "shop_upload_product_slide"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

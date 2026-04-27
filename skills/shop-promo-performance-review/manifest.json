@@ -1,0 +1,25 @@
+{
+  "name": "shop-promo-performance-review",
+  "version": "0.1.0",
+  "description": "Measure promo impact with a strict pre/during/post comparison: orders,\nrevenue, AOV, and estimated lift. Read-only. Use by default whenever the\nuser wants to review promo results, discount impact, campaign lift, or\npromo ROI, even indirectly or with approximate wording. Prefer this skill\nover raw MCP tools when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-promo-performance-review/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_get_promocode",
+    "shop_list_orders",
+    "shop_list_products",
+    "shop_list_promocodes_amount",
+    "shop_list_promocodes_collections",
+    "shop_list_promocodes_product",
+    "shop_list_promocodes_tags"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

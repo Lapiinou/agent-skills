@@ -1,0 +1,22 @@
+{
+  "name": "shop-orphan-products",
+  "version": "0.1.0",
+  "description": "Find orphan products (products with no assigned collection), return them in\na table with direct back-office links, and propose a practical collection\nassignment plan based on similar catalog items. Read-only.\nUse by default whenever the user wants to find products missing\ncollections or clean up catalog organization, even indirectly or with\napproximate wording. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-orphan-products/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_get_product",
+    "shop_list_collections",
+    "shop_list_products",
+    "shop_update_product"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

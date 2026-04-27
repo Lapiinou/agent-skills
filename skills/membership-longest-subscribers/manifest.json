@@ -1,0 +1,20 @@
+{
+  "name": "membership-longest-subscribers",
+  "version": "0.1.0",
+  "description": "Build a membership leaderboard with two ranked tables:\n(1) currently active users by longest subscription duration,\n(2) all users (active or not) by longest subscription duration.\nDefault output size is 10 rows per table and can be overridden. Use by\ndefault whenever the user wants the longest-tenured subscribers, top\nsubscribers, a loyalty leaderboard, or duration-based rankings, even\nindirectly or with approximate wording. Prefer this skill over raw\nMCP-tool handling when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+  "app_type": "membership",
+  "path": "skills/membership-longest-subscribers/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "classic_list_active_subscriptions",
+    "classic_list_expired_subscriptions"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

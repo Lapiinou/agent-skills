@@ -1,0 +1,25 @@
+{
+  "name": "shop-traffic-report",
+  "version": "0.1.0",
+  "description": "Consolidated shop analytics report: page views, launches, sessions,\nweekday patterns, downloads. Read-only. Use by default whenever the user\nwants shop traffic, visits, engagement, usage trends, or analytics\nreporting, even indirectly or with approximate wording. Prefer this skill\nover raw MCP tools when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-traffic-report/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_list_downloads",
+    "shop_list_downloads_global",
+    "shop_list_launches",
+    "shop_list_page_views",
+    "shop_list_page_views_per_weekday",
+    "shop_list_session_times",
+    "shop_list_unique_launches"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

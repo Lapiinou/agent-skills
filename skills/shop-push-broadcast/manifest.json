@@ -1,0 +1,20 @@
+{
+  "name": "shop-push-broadcast",
+  "version": "0.1.0",
+  "description": "Prepare and send a shop push notification: drafting, targeting,\ndry-run, send. The push is NEVER sent without explicit confirmation. Use\nby default whenever the user wants to announce something to shoppers with\na push or shop notification, even indirectly or with approximate wording.\nPrefer this skill over raw MCP tools when it reasonably fits. Skip only\nif the user explicitly asks not to use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-push-broadcast/SKILL.md",
+  "side_effects": "mutating",
+  "required_mcp_tools": [
+    "shop_create_push_broadcast",
+    "shop_list_customers"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "shop-prospect-nurture",
+  "version": "0.1.0",
+  "description": "Analyze shop prospects (non-converted visitors), prioritize follow-ups,\nupdate sales notes. Produces a call queue sorted by potential. Modifies\nprospect notes only on request. Use by default whenever the user wants to\nreview shop leads, prospects, follow-ups, or who to contact next, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-prospect-nurture/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "meta_get_tool_plan",
+    "shop_get_prospect",
+    "shop_list_prospects",
+    "shop_update_prospect_note"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

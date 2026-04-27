@@ -1,0 +1,22 @@
+{
+  "name": "shop-low-performers",
+  "version": "0.1.0",
+  "description": "Identify the lowest-performing shop products for a selected time window\n(default 30 days): zero-sales first, then low quantity / low revenue.\nReturns action-ready rows with direct back-office links per product.\nRead-only. Use by default whenever the user wants to find products that\nare not selling, underperforming, or dragging catalog performance, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-low-performers/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_list_collections",
+    "shop_list_orders",
+    "shop_list_products",
+    "shop_list_tags"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

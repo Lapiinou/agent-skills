@@ -1,0 +1,28 @@
+{
+  "name": "shop-promo-campaign",
+  "version": "0.1.0",
+  "description": "End-to-end shop promo campaign design: pick the promocode type (amount,\nproduct, collection, tag), create the code, and send the announcement\npush broadcast. Dry-run required before creation \u2014 the user sees exactly\nwhat will be created. Use by default whenever the user wants to plan or\nlaunch a promo, discount, sale, offer, or code-based campaign, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-promo-campaign/SKILL.md",
+  "side_effects": "mutating",
+  "required_mcp_tools": [
+    "meta_get_tool_plan",
+    "shop_create_promocode_amount",
+    "shop_create_promocode_collections",
+    "shop_create_promocode_product",
+    "shop_create_promocode_tags",
+    "shop_create_push_broadcast",
+    "shop_get_promocode",
+    "shop_list_collections",
+    "shop_list_products",
+    "shop_list_tags"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

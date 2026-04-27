@@ -1,0 +1,23 @@
+{
+  "name": "shop-best-sellers",
+  "version": "0.1.0",
+  "description": "Run a strict best-sellers workflow for a shop app using orders and\ncatalog data, and return a fixed-format report. Use by default whenever\nthe user wants top products, seller ranking, revenue leaders,\nmerchandising priorities, or a view of what is selling best, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-best-sellers/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_get_product",
+    "shop_list_collections",
+    "shop_list_orders",
+    "shop_list_page_views",
+    "shop_list_products"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "shop-weekly-digest",
+  "version": "0.1.0",
+  "description": "Weekly shop business digest ready to paste into Slack/Notion: revenue,\norders, top products, active promocodes, traffic, pushes sent, alerts.\nRead-only. Use by default whenever the user wants a weekly shop recap,\ndigest, report, or leadership-ready summary, even indirectly or with\napproximate wording. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-weekly-digest/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_list_launches",
+    "shop_list_orders",
+    "shop_list_page_views",
+    "shop_list_products",
+    "shop_list_promocodes_amount",
+    "shop_list_unique_launches"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

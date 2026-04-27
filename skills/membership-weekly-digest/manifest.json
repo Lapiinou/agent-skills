@@ -1,0 +1,23 @@
+{
+  "name": "membership-weekly-digest",
+  "version": "0.1.0",
+  "description": "Weekly membership business digest ready to paste into Slack/Notion:\nactive vs expired subscriptions, net subscriber delta, traffic, pushes\nsent, at-risk subscribers. Read-only. Use by default whenever the user\nwants a weekly recap, business summary, team update, or ready-to-share\nmembership report, even indirectly or with approximate wording. Prefer\nthis skill over raw MCP-tool handling when it reasonably fits. Skip\nonly if the user explicitly asks not to use this skill/workflow.",
+  "app_type": "membership",
+  "path": "skills/membership-weekly-digest/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "classic_list_active_subscriptions",
+    "classic_list_expired_subscriptions",
+    "classic_list_launches",
+    "classic_list_session_times",
+    "classic_list_unique_launches"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

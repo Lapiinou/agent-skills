@@ -1,0 +1,24 @@
+{
+  "name": "membership-subscription-audit",
+  "version": "0.1.0",
+  "description": "Full audit of membership subscriptions: active vs expired, churn\ndetection, at-risk customers, winback opportunities. Updates\nsubscription notes only on request. Use by default whenever the user\nwants subscription health, churn, retention risk, winback candidates,\nor an overall membership status review, even indirectly or with\napproximate wording. Prefer this skill over raw MCP-tool handling when\nit reasonably fits. Skip only if the user explicitly asks not to use\nthis skill/workflow.",
+  "app_type": "membership",
+  "path": "skills/membership-subscription-audit/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "classic_get_active_subscription",
+    "classic_get_expired_subscription",
+    "classic_list_active_subscriptions",
+    "classic_list_expired_subscriptions",
+    "classic_update_active_subscription_note",
+    "classic_update_expired_subscription_note"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

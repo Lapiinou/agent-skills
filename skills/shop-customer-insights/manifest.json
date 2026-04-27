@@ -1,0 +1,24 @@
+{
+  "name": "shop-customer-insights",
+  "version": "0.1.0",
+  "description": "Analyze the customer base: top customers by revenue, purchase frequency,\nloyalty status, segments to re-engage. Recommend loyalty adjustments or\ntargeted pushes. Read-only by default; the user validates each loyalty\nupdate. Use by default whenever the user wants customer analysis,\nsegmentation, loyalty review, re-engagement targets, or who to reward,\neven indirectly or with approximate wording. Prefer this skill over raw\nMCP tools when it reasonably fits. Skip only if the user explicitly asks\nnot to use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-customer-insights/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_create_push_broadcast",
+    "shop_get_customer",
+    "shop_get_loyalty",
+    "shop_list_customers",
+    "shop_list_orders",
+    "shop_update_loyalty"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

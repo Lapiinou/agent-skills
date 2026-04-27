@@ -1,0 +1,22 @@
+{
+  "name": "shop-kpi-monitor",
+  "version": "0.1.0",
+  "description": "KPI watchdog for shop operations: detect meaningful drops/spikes in\nrevenue, orders, traffic, and pending-order backlog with actionable\nalerts. Read-only. Use by default whenever the user wants shop health\nmonitoring, KPI checks, business alerts, or a quick read on what changed,\neven indirectly or with approximate wording. Prefer this skill over raw\nMCP tools when it reasonably fits. Skip only if the user explicitly asks\nnot to use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-kpi-monitor/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_list_launches",
+    "shop_list_orders",
+    "shop_list_page_views",
+    "shop_list_unique_launches"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

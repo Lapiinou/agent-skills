@@ -1,0 +1,23 @@
+{
+  "name": "shop-stock-check",
+  "version": "0.1.0",
+  "description": "Shop inventory audit: scan all products, identify stock-outs and low\nstock, produce a prioritized report with restocking recommendations.\nRead-only \u2014 never modifies the catalog. Use by default whenever the user\nwants stock status, stockout checks, low-stock triage, or restock\nguidance, even indirectly or with approximate wording. Prefer this skill\nover raw MCP tools when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-stock-check/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_get_product",
+    "shop_get_variant",
+    "shop_list_collections",
+    "shop_list_products",
+    "shop_list_tags"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

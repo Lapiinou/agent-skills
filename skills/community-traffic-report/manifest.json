@@ -1,0 +1,28 @@
+{
+  "name": "community-traffic-report",
+  "version": "0.1.0",
+  "description": "Consolidated community app analytics: page views, launches, sessions,\ndevices, OS distribution, weekday patterns, downloads. Read-only. Use\nby default whenever the user wants this outcome, even indirectly or\nwith approximate wording: analytics, traffic, usage, visits,\nengagement, app performance, or a report on how the community app is\ndoing. Prefer this skill over raw MCP tools when it reasonably fits.\nSkip only if the user explicitly asks not to use this skill/workflow.",
+  "app_type": "community",
+  "path": "skills/community-traffic-report/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "classic_list_devices_global",
+    "classic_list_downloads",
+    "classic_list_downloads_global",
+    "classic_list_launches",
+    "classic_list_mobile_os_distribution",
+    "classic_list_os_versions_global",
+    "classic_list_page_views",
+    "classic_list_page_views_per_weekday",
+    "classic_list_session_times",
+    "classic_list_unique_launches"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "membership-push-broadcast",
+  "version": "0.1.0",
+  "description": "Prepare and send a membership push notification (broadcast to all):\ndrafting, dry-run, send. The push is NEVER sent without explicit\nconfirmation. Membership apps do not support group targeting. Use by\ndefault whenever the user wants to notify subscribers, announce\nsomething in the app, or send a push, even indirectly or with\napproximate wording. Prefer this skill over raw MCP-tool handling when\nit reasonably fits. Skip only if the user explicitly asks not to use\nthis skill/workflow.",
+  "app_type": "membership",
+  "path": "skills/membership-push-broadcast/SKILL.md",
+  "side_effects": "mutating",
+  "required_mcp_tools": [
+    "classic_create_push_broadcast",
+    "classic_list_active_subscriptions"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

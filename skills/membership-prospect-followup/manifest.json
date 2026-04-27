@@ -1,0 +1,21 @@
+{
+  "name": "membership-prospect-followup",
+  "version": "0.1.0",
+  "description": "Prioritize membership prospects and update their sales notes after\ninteraction. Read for analysis, write only note-by-note. Use by\ndefault whenever the user wants a follow-up queue, lead triage,\nprospect tracking, outreach planning, or prospect-note updates, even\nindirectly or with approximate wording. Prefer this skill over raw\nMCP-tool handling when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+  "app_type": "membership",
+  "path": "skills/membership-prospect-followup/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "classic_get_prospect",
+    "classic_list_prospects",
+    "classic_update_prospect_note"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

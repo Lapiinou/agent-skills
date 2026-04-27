@@ -1,0 +1,23 @@
+{
+  "name": "shop-reorder-planner",
+  "version": "0.1.0",
+  "description": "Build a supplier-ready reorder queue from current stock and recent sell\nvelocity. Prioritizes what to reorder now, soon, or monitor. Read-only.\nUse by default whenever the user wants reorder, restock, purchasing,\nstock-cover, or supplier-planning help, even indirectly or with\napproximate wording. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+  "app_type": "shop",
+  "path": "skills/shop-reorder-planner/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "shop_get_product",
+    "shop_list_collections",
+    "shop_list_orders",
+    "shop_list_products",
+    "shop_list_tags"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

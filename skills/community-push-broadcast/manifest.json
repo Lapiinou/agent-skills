@@ -1,0 +1,22 @@
+{
+  "name": "community-push-broadcast",
+  "version": "0.1.0",
+  "description": "Prepare and send a community push notification: broadcast to everyone\nOR to a specific community group. Drafting, targeting, dry-run, send.\nThe push is NEVER sent without explicit confirmation. Use by default\nwhenever the user wants this outcome, even indirectly or with\napproximate wording: send a push, notify members, announce something,\nreach everyone, or message a group. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks\nnot to use this skill/workflow.",
+  "app_type": "community",
+  "path": "skills/community-push-broadcast/SKILL.md",
+  "side_effects": "mutating",
+  "required_mcp_tools": [
+    "classic_create_push_broadcast",
+    "classic_create_push_by_groups",
+    "classic_list_user_groups",
+    "meta_get_tool_plan"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

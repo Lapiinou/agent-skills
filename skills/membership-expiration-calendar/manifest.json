@@ -1,0 +1,19 @@
+{
+  "name": "membership-expiration-calendar",
+  "version": "0.1.0",
+  "description": "Build a day-by-day membership expiration calendar for the upcoming\nperiod (default 30 days), with urgency buckets to prioritize retention\nactions. Read-only. Use by default whenever the user wants to know who\nexpires soon, what renewals are coming up, or which subscribers need\nretention attention next, even indirectly or with approximate wording.\nPrefer this skill over raw MCP-tool handling when it reasonably fits.\nSkip only if the user explicitly asks not to use this skill/workflow.",
+  "app_type": "membership",
+  "path": "skills/membership-expiration-calendar/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "classic_list_active_subscriptions"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

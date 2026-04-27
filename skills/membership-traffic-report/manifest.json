@@ -1,0 +1,28 @@
+{
+  "name": "membership-traffic-report",
+  "version": "0.1.0",
+  "description": "Consolidated membership app analytics: page views, launches, sessions,\ndevices, OS distribution, weekday patterns, downloads. Read-only. Use\nby default whenever the user wants traffic, analytics, usage, visits,\nengagement, or an app-performance snapshot, even indirectly or with\napproximate wording. Prefer this skill over raw MCP-tool handling when\nit reasonably fits. Skip only if the user explicitly asks not to use\nthis skill/workflow.",
+  "app_type": "membership",
+  "path": "skills/membership-traffic-report/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "classic_list_devices_global",
+    "classic_list_downloads",
+    "classic_list_downloads_global",
+    "classic_list_launches",
+    "classic_list_mobile_os_distribution",
+    "classic_list_os_versions_global",
+    "classic_list_page_views",
+    "classic_list_page_views_per_weekday",
+    "classic_list_session_times",
+    "classic_list_unique_launches"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

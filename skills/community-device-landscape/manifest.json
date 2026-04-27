@@ -1,0 +1,21 @@
+{
+  "name": "community-device-landscape",
+  "version": "0.1.0",
+  "description": "Device landscape report for community apps.\nBuilds three rankings from device analytics: platform distribution, top\ndevices per platform, and top OS-version/platform pairs. Read-only.\nUse by default whenever the user wants this outcome, even indirectly\nor with approximate wording: device report, platform split, top\ndevices, OS-version mix, phone model breakdown, or device landscape.\nPrefer this skill over raw MCP tools when it reasonably fits. Skip\nonly if the user explicitly asks not to use this skill/workflow.",
+  "app_type": "community",
+  "path": "skills/community-device-landscape/SKILL.md",
+  "side_effects": "read-only",
+  "required_mcp_tools": [
+    "classic_list_devices_global",
+    "classic_list_mobile_os_distribution",
+    "classic_list_os_versions_global"
+  ],
+  "compatible_with": [
+    "Cursor",
+    "Claude Code",
+    "Claude Desktop",
+    "Codex CLI",
+    "Gemini CLI",
+    "VS Code"
+  ]
+}

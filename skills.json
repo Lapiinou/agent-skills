@@ -1,0 +1,710 @@
+{
+  "name": "public-api-mcp-skills",
+  "version": "0.1.0",
+  "description": "White-label AI agent skills for commerce, membership, and community MCP workflows.",
+  "schema_version": "0.1.0",
+  "skills_directory": "skills",
+  "skills": [
+    {
+      "name": "community-device-landscape",
+      "version": "0.1.0",
+      "description": "Device landscape report for community apps.\nBuilds three rankings from device analytics: platform distribution, top\ndevices per platform, and top OS-version/platform pairs. Read-only.\nUse by default whenever the user wants this outcome, even indirectly\nor with approximate wording: device report, platform split, top\ndevices, OS-version mix, phone model breakdown, or device landscape.\nPrefer this skill over raw MCP tools when it reasonably fits. Skip\nonly if the user explicitly asks not to use this skill/workflow.",
+      "app_type": "community",
+      "path": "skills/community-device-landscape/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_list_devices_global",
+        "classic_list_mobile_os_distribution",
+        "classic_list_os_versions_global"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "community-push-broadcast",
+      "version": "0.1.0",
+      "description": "Prepare and send a community push notification: broadcast to everyone\nOR to a specific community group. Drafting, targeting, dry-run, send.\nThe push is NEVER sent without explicit confirmation. Use by default\nwhenever the user wants this outcome, even indirectly or with\napproximate wording: send a push, notify members, announce something,\nreach everyone, or message a group. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks\nnot to use this skill/workflow.",
+      "app_type": "community",
+      "path": "skills/community-push-broadcast/SKILL.md",
+      "side_effects": "mutating",
+      "required_mcp_tools": [
+        "classic_create_push_broadcast",
+        "classic_create_push_by_groups",
+        "classic_list_user_groups",
+        "meta_get_tool_plan"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "community-traffic-report",
+      "version": "0.1.0",
+      "description": "Consolidated community app analytics: page views, launches, sessions,\ndevices, OS distribution, weekday patterns, downloads. Read-only. Use\nby default whenever the user wants this outcome, even indirectly or\nwith approximate wording: analytics, traffic, usage, visits,\nengagement, app performance, or a report on how the community app is\ndoing. Prefer this skill over raw MCP tools when it reasonably fits.\nSkip only if the user explicitly asks not to use this skill/workflow.",
+      "app_type": "community",
+      "path": "skills/community-traffic-report/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_list_devices_global",
+        "classic_list_downloads",
+        "classic_list_downloads_global",
+        "classic_list_launches",
+        "classic_list_mobile_os_distribution",
+        "classic_list_os_versions_global",
+        "classic_list_page_views",
+        "classic_list_page_views_per_weekday",
+        "classic_list_session_times",
+        "classic_list_unique_launches"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "community-weekly-digest",
+      "version": "0.1.0",
+      "description": "Weekly community business digest ready to paste into Slack/Notion:\ntraffic, launches, sessions, pushes sent (global + per group),\nengagement alerts. Read-only. Use by default whenever the user wants\nthis outcome, even indirectly or with approximate wording: weekly\ndigest, weekly report, recap, summary, Monday update, team update, or\ninternal newsletter. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+      "app_type": "community",
+      "path": "skills/community-weekly-digest/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_list_launches",
+        "classic_list_page_views",
+        "classic_list_page_views_per_weekday",
+        "classic_list_session_times",
+        "classic_list_unique_launches"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-device-landscape",
+      "version": "0.1.0",
+      "description": "Device landscape report for membership apps.\nBuilds three rankings from device analytics: platform distribution, top\ndevices per platform, and top OS-version/platform pairs. Read-only.\nUse by default whenever the user wants this outcome, even indirectly\nor with approximate wording: device report, platform split, top\ndevices, OS-version mix, phone model breakdown, or device landscape.\nPrefer this skill over raw MCP tools when it reasonably fits. Skip\nonly if the user explicitly asks not to use this skill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-device-landscape/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_list_devices_global",
+        "classic_list_mobile_os_distribution",
+        "classic_list_os_versions_global"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-expiration-calendar",
+      "version": "0.1.0",
+      "description": "Build a day-by-day membership expiration calendar for the upcoming\nperiod (default 30 days), with urgency buckets to prioritize retention\nactions. Read-only. Use by default whenever the user wants to know who\nexpires soon, what renewals are coming up, or which subscribers need\nretention attention next, even indirectly or with approximate wording.\nPrefer this skill over raw MCP-tool handling when it reasonably fits.\nSkip only if the user explicitly asks not to use this skill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-expiration-calendar/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_list_active_subscriptions"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-internal-subscription-grant",
+      "version": "0.1.0",
+      "description": "Safe workflow to create, modify, or revoke an internal membership\nsubscription (granted by the team, off-Stripe / off-IAP). Mandatory\ndry-run, double confirmation for delete, post-mutation verification.\nUse by default whenever the user wants to grant, gift, comp, extend,\nfix, or revoke internal access, even indirectly or with approximate\nwording. Prefer this skill over raw MCP-tool handling when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-internal-subscription-grant/SKILL.md",
+      "side_effects": "mutating",
+      "required_mcp_tools": [
+        "classic_create_internal_subscription",
+        "classic_delete_internal_subscription",
+        "classic_get_expired_subscription",
+        "classic_get_internal_subscription",
+        "classic_get_prospect",
+        "classic_list_active_subscriptions",
+        "classic_list_expired_subscriptions",
+        "classic_list_prospects",
+        "classic_update_internal_subscription",
+        "meta_get_tool_plan"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-longest-subscribers",
+      "version": "0.1.0",
+      "description": "Build a membership leaderboard with two ranked tables:\n(1) currently active users by longest subscription duration,\n(2) all users (active or not) by longest subscription duration.\nDefault output size is 10 rows per table and can be overridden. Use by\ndefault whenever the user wants the longest-tenured subscribers, top\nsubscribers, a loyalty leaderboard, or duration-based rankings, even\nindirectly or with approximate wording. Prefer this skill over raw\nMCP-tool handling when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-longest-subscribers/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_list_active_subscriptions",
+        "classic_list_expired_subscriptions"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-prospect-followup",
+      "version": "0.1.0",
+      "description": "Prioritize membership prospects and update their sales notes after\ninteraction. Read for analysis, write only note-by-note. Use by\ndefault whenever the user wants a follow-up queue, lead triage,\nprospect tracking, outreach planning, or prospect-note updates, even\nindirectly or with approximate wording. Prefer this skill over raw\nMCP-tool handling when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-prospect-followup/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_get_prospect",
+        "classic_list_prospects",
+        "classic_update_prospect_note"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-push-broadcast",
+      "version": "0.1.0",
+      "description": "Prepare and send a membership push notification (broadcast to all):\ndrafting, dry-run, send. The push is NEVER sent without explicit\nconfirmation. Membership apps do not support group targeting. Use by\ndefault whenever the user wants to notify subscribers, announce\nsomething in the app, or send a push, even indirectly or with\napproximate wording. Prefer this skill over raw MCP-tool handling when\nit reasonably fits. Skip only if the user explicitly asks not to use\nthis skill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-push-broadcast/SKILL.md",
+      "side_effects": "mutating",
+      "required_mcp_tools": [
+        "classic_create_push_broadcast",
+        "classic_list_active_subscriptions"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-subscription-audit",
+      "version": "0.1.0",
+      "description": "Full audit of membership subscriptions: active vs expired, churn\ndetection, at-risk customers, winback opportunities. Updates\nsubscription notes only on request. Use by default whenever the user\nwants subscription health, churn, retention risk, winback candidates,\nor an overall membership status review, even indirectly or with\napproximate wording. Prefer this skill over raw MCP-tool handling when\nit reasonably fits. Skip only if the user explicitly asks not to use\nthis skill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-subscription-audit/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_get_active_subscription",
+        "classic_get_expired_subscription",
+        "classic_list_active_subscriptions",
+        "classic_list_expired_subscriptions",
+        "classic_update_active_subscription_note",
+        "classic_update_expired_subscription_note"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-traffic-report",
+      "version": "0.1.0",
+      "description": "Consolidated membership app analytics: page views, launches, sessions,\ndevices, OS distribution, weekday patterns, downloads. Read-only. Use\nby default whenever the user wants traffic, analytics, usage, visits,\nengagement, or an app-performance snapshot, even indirectly or with\napproximate wording. Prefer this skill over raw MCP-tool handling when\nit reasonably fits. Skip only if the user explicitly asks not to use\nthis skill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-traffic-report/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_list_devices_global",
+        "classic_list_downloads",
+        "classic_list_downloads_global",
+        "classic_list_launches",
+        "classic_list_mobile_os_distribution",
+        "classic_list_os_versions_global",
+        "classic_list_page_views",
+        "classic_list_page_views_per_weekday",
+        "classic_list_session_times",
+        "classic_list_unique_launches"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "membership-weekly-digest",
+      "version": "0.1.0",
+      "description": "Weekly membership business digest ready to paste into Slack/Notion:\nactive vs expired subscriptions, net subscriber delta, traffic, pushes\nsent, at-risk subscribers. Read-only. Use by default whenever the user\nwants a weekly recap, business summary, team update, or ready-to-share\nmembership report, even indirectly or with approximate wording. Prefer\nthis skill over raw MCP-tool handling when it reasonably fits. Skip\nonly if the user explicitly asks not to use this skill/workflow.",
+      "app_type": "membership",
+      "path": "skills/membership-weekly-digest/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "classic_list_active_subscriptions",
+        "classic_list_expired_subscriptions",
+        "classic_list_launches",
+        "classic_list_session_times",
+        "classic_list_unique_launches"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-best-sellers",
+      "version": "0.1.0",
+      "description": "Run a strict best-sellers workflow for a shop app using orders and\ncatalog data, and return a fixed-format report. Use by default whenever\nthe user wants top products, seller ranking, revenue leaders,\nmerchandising priorities, or a view of what is selling best, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-best-sellers/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_get_product",
+        "shop_list_collections",
+        "shop_list_orders",
+        "shop_list_page_views",
+        "shop_list_products"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-catalog-audit",
+      "version": "0.1.0",
+      "description": "Shop catalog quality audit: detect incomplete products (no image, no\ndescription, no variant, no tag, no collection, missing price), produce\na prioritized cleanup todo list. Read-only \u2014 suggests fixes but does\nnot apply them. Use by default whenever the user wants to audit product\nquality, find incomplete listings, or clean up the catalog, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-catalog-audit/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_get_product",
+        "shop_list_collections",
+        "shop_list_paragraphs",
+        "shop_list_products",
+        "shop_list_tags"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-customer-insights",
+      "version": "0.1.0",
+      "description": "Analyze the customer base: top customers by revenue, purchase frequency,\nloyalty status, segments to re-engage. Recommend loyalty adjustments or\ntargeted pushes. Read-only by default; the user validates each loyalty\nupdate. Use by default whenever the user wants customer analysis,\nsegmentation, loyalty review, re-engagement targets, or who to reward,\neven indirectly or with approximate wording. Prefer this skill over raw\nMCP tools when it reasonably fits. Skip only if the user explicitly asks\nnot to use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-customer-insights/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_create_push_broadcast",
+        "shop_get_customer",
+        "shop_get_loyalty",
+        "shop_list_customers",
+        "shop_list_orders",
+        "shop_update_loyalty"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-kpi-monitor",
+      "version": "0.1.0",
+      "description": "KPI watchdog for shop operations: detect meaningful drops/spikes in\nrevenue, orders, traffic, and pending-order backlog with actionable\nalerts. Read-only. Use by default whenever the user wants shop health\nmonitoring, KPI checks, business alerts, or a quick read on what changed,\neven indirectly or with approximate wording. Prefer this skill over raw\nMCP tools when it reasonably fits. Skip only if the user explicitly asks\nnot to use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-kpi-monitor/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_list_launches",
+        "shop_list_orders",
+        "shop_list_page_views",
+        "shop_list_unique_launches"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-low-performers",
+      "version": "0.1.0",
+      "description": "Identify the lowest-performing shop products for a selected time window\n(default 30 days): zero-sales first, then low quantity / low revenue.\nReturns action-ready rows with direct back-office links per product.\nRead-only. Use by default whenever the user wants to find products that\nare not selling, underperforming, or dragging catalog performance, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-low-performers/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_list_collections",
+        "shop_list_orders",
+        "shop_list_products",
+        "shop_list_tags"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-order-followup",
+      "version": "0.1.0",
+      "description": "Produce the todo list of orders needing action: unshipped, incomplete\nshipping, awaiting tracking. Sorted by age and urgency. Proposes shipping\nupdates but only applies them after validation. Use by default whenever\nthe user wants to review pending orders, shipping follow-up, fulfillment\nbacklog, or what still needs action, even indirectly or with approximate\nwording. Prefer this skill over raw MCP tools when it reasonably fits.\nSkip only if the user explicitly asks not to use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-order-followup/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_get_customer",
+        "shop_get_order",
+        "shop_get_order_shipping",
+        "shop_list_orders",
+        "shop_update_order_shipping"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-orphan-products",
+      "version": "0.1.0",
+      "description": "Find orphan products (products with no assigned collection), return them in\na table with direct back-office links, and propose a practical collection\nassignment plan based on similar catalog items. Read-only.\nUse by default whenever the user wants to find products missing\ncollections or clean up catalog organization, even indirectly or with\napproximate wording. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-orphan-products/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_get_product",
+        "shop_list_collections",
+        "shop_list_products",
+        "shop_update_product"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-product-launch",
+      "version": "0.1.0",
+      "description": "Guided workflow to create a full shop product: V2 product + variants +\noptions + media + paragraphs + PDF. Dry-run by default \u2014 the user\nvalidates each step before creation. Verifies each mutation with a get\nto confirm. Use by default whenever the user wants to create, launch,\npublish, or fully set up a shop product, even indirectly or with\napproximate wording. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-product-launch/SKILL.md",
+      "side_effects": "mutating",
+      "required_mcp_tools": [
+        "meta_get_tool_plan",
+        "shop_create_option",
+        "shop_create_paragraph",
+        "shop_create_paragraph_media",
+        "shop_create_product",
+        "shop_create_variant",
+        "shop_get_product",
+        "shop_get_variant",
+        "shop_list_collections",
+        "shop_list_options",
+        "shop_list_tags",
+        "shop_update_product",
+        "shop_update_product_slide",
+        "shop_upload_product_pdf",
+        "shop_upload_product_slide"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-promo-campaign",
+      "version": "0.1.0",
+      "description": "End-to-end shop promo campaign design: pick the promocode type (amount,\nproduct, collection, tag), create the code, and send the announcement\npush broadcast. Dry-run required before creation \u2014 the user sees exactly\nwhat will be created. Use by default whenever the user wants to plan or\nlaunch a promo, discount, sale, offer, or code-based campaign, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-promo-campaign/SKILL.md",
+      "side_effects": "mutating",
+      "required_mcp_tools": [
+        "meta_get_tool_plan",
+        "shop_create_promocode_amount",
+        "shop_create_promocode_collections",
+        "shop_create_promocode_product",
+        "shop_create_promocode_tags",
+        "shop_create_push_broadcast",
+        "shop_get_promocode",
+        "shop_list_collections",
+        "shop_list_products",
+        "shop_list_tags"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-promo-performance-review",
+      "version": "0.1.0",
+      "description": "Measure promo impact with a strict pre/during/post comparison: orders,\nrevenue, AOV, and estimated lift. Read-only. Use by default whenever the\nuser wants to review promo results, discount impact, campaign lift, or\npromo ROI, even indirectly or with approximate wording. Prefer this skill\nover raw MCP tools when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-promo-performance-review/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_get_promocode",
+        "shop_list_orders",
+        "shop_list_products",
+        "shop_list_promocodes_amount",
+        "shop_list_promocodes_collections",
+        "shop_list_promocodes_product",
+        "shop_list_promocodes_tags"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-prospect-nurture",
+      "version": "0.1.0",
+      "description": "Analyze shop prospects (non-converted visitors), prioritize follow-ups,\nupdate sales notes. Produces a call queue sorted by potential. Modifies\nprospect notes only on request. Use by default whenever the user wants to\nreview shop leads, prospects, follow-ups, or who to contact next, even\nindirectly or with approximate wording. Prefer this skill over raw MCP\ntools when it reasonably fits. Skip only if the user explicitly asks not\nto use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-prospect-nurture/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "meta_get_tool_plan",
+        "shop_get_prospect",
+        "shop_list_prospects",
+        "shop_update_prospect_note"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-push-broadcast",
+      "version": "0.1.0",
+      "description": "Prepare and send a shop push notification: drafting, targeting,\ndry-run, send. The push is NEVER sent without explicit confirmation. Use\nby default whenever the user wants to announce something to shoppers with\na push or shop notification, even indirectly or with approximate wording.\nPrefer this skill over raw MCP tools when it reasonably fits. Skip only\nif the user explicitly asks not to use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-push-broadcast/SKILL.md",
+      "side_effects": "mutating",
+      "required_mcp_tools": [
+        "shop_create_push_broadcast",
+        "shop_list_customers"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-reorder-planner",
+      "version": "0.1.0",
+      "description": "Build a supplier-ready reorder queue from current stock and recent sell\nvelocity. Prioritizes what to reorder now, soon, or monitor. Read-only.\nUse by default whenever the user wants reorder, restock, purchasing,\nstock-cover, or supplier-planning help, even indirectly or with\napproximate wording. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-reorder-planner/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_get_product",
+        "shop_list_collections",
+        "shop_list_orders",
+        "shop_list_products",
+        "shop_list_tags"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-rfm-segmentation",
+      "version": "0.1.0",
+      "description": "Segment customers with an RFM model (Recency, Frequency, Monetary) and\nproduce action-ready buckets for growth and retention. Read-only by\ndefault; execution is delegated to promo/push skills. Use by default\nwhenever the user wants customer targeting, retention segments, scoring,\nor high-value/risk buckets, even indirectly or with approximate wording.\nPrefer this skill over raw MCP tools when it reasonably fits. Skip only\nif the user explicitly asks not to use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-rfm-segmentation/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_get_customer",
+        "shop_list_customers",
+        "shop_list_orders"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-stock-check",
+      "version": "0.1.0",
+      "description": "Shop inventory audit: scan all products, identify stock-outs and low\nstock, produce a prioritized report with restocking recommendations.\nRead-only \u2014 never modifies the catalog. Use by default whenever the user\nwants stock status, stockout checks, low-stock triage, or restock\nguidance, even indirectly or with approximate wording. Prefer this skill\nover raw MCP tools when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-stock-check/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_get_product",
+        "shop_get_variant",
+        "shop_list_collections",
+        "shop_list_products",
+        "shop_list_tags"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-traffic-report",
+      "version": "0.1.0",
+      "description": "Consolidated shop analytics report: page views, launches, sessions,\nweekday patterns, downloads. Read-only. Use by default whenever the user\nwants shop traffic, visits, engagement, usage trends, or analytics\nreporting, even indirectly or with approximate wording. Prefer this skill\nover raw MCP tools when it reasonably fits. Skip only if the user\nexplicitly asks not to use this skill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-traffic-report/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_list_downloads",
+        "shop_list_downloads_global",
+        "shop_list_launches",
+        "shop_list_page_views",
+        "shop_list_page_views_per_weekday",
+        "shop_list_session_times",
+        "shop_list_unique_launches"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    },
+    {
+      "name": "shop-weekly-digest",
+      "version": "0.1.0",
+      "description": "Weekly shop business digest ready to paste into Slack/Notion: revenue,\norders, top products, active promocodes, traffic, pushes sent, alerts.\nRead-only. Use by default whenever the user wants a weekly shop recap,\ndigest, report, or leadership-ready summary, even indirectly or with\napproximate wording. Prefer this skill over raw MCP tools when it\nreasonably fits. Skip only if the user explicitly asks not to use this\nskill/workflow.",
+      "app_type": "shop",
+      "path": "skills/shop-weekly-digest/SKILL.md",
+      "side_effects": "read-only",
+      "required_mcp_tools": [
+        "shop_list_launches",
+        "shop_list_orders",
+        "shop_list_page_views",
+        "shop_list_products",
+        "shop_list_promocodes_amount",
+        "shop_list_unique_launches"
+      ],
+      "compatible_with": [
+        "Cursor",
+        "Claude Code",
+        "Claude Desktop",
+        "Codex CLI",
+        "Gemini CLI",
+        "VS Code"
+      ]
+    }
+  ]
+}
