@@ -11,7 +11,8 @@ URL, or clone it and install the skill folders locally.
 - `skills/` contains one portable skill package per directory.
 - `skills.json` is the catalog manifest for discovery and marketplace indexing.
 - Each skill includes a `SKILL.md` file and a `manifest.json` file.
-- `scripts/install.py` copies skills into a local IDE skill directory.
+- `scripts/install.py` installs skills for Claude Code, Cursor, Gemini CLI,
+  VS Code/Copilot, or a custom skill directory.
 - `scripts/validate.py` checks package structure and white-label constraints.
 
 ## Requirements
@@ -33,17 +34,42 @@ For local installation:
 ```bash
 git clone <github-url>
 cd public-api-mcp-skills
-python scripts/install.py --target ~/.cursor/skills
+python scripts/install.py --target cursor
 ```
 
-For a project-local Cursor install:
+Install into multiple supported tools at once:
 
 ```bash
-python scripts/install.py --target /path/to/project/.cursor/skills
+python scripts/install.py --target claude-code,cursor,gemini-cli --force
 ```
 
-For other IDEs, use the same command with the directory where that IDE expects
-skill packages. Each package is a directory containing a `SKILL.md` file.
+For a project-local install, pass the project root:
+
+```bash
+python scripts/install.py --target cursor,claude-code,gemini-cli,vscode --project /path/to/project
+```
+
+Supported targets:
+
+- `claude-code`: copies skill packages to `~/.claude/skills`, or
+  `<project>/.claude/skills` with `--project`.
+- `cursor`: copies skill packages to `~/.cursor/skills`, or
+  `<project>/.cursor/skills` with `--project`.
+- `gemini-cli`: creates a Gemini CLI extension in
+  `~/.gemini/extensions/public-api-mcp-skills`, or under
+  `<project>/.gemini/extensions/` with `--project`.
+- `vscode`: writes a Copilot instruction file to
+  `<project>/.github/instructions/public-api-mcp-skills.instructions.md`.
+
+For other IDEs, install the raw skill folders into any directory:
+
+```bash
+python scripts/install.py --target-dir /path/to/skills
+```
+
+For backwards compatibility, `--target /path/to/skills` also installs raw skill
+folders into that directory. Each package is a directory containing a `SKILL.md`
+file.
 
 ## Catalog Format
 
